@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orienta Gabon</title>
+<style>
+body{font-family:Arial;background:#f0f7f0;margin:0;padding:0}
+header{background:#009e60;color:white;padding:25px;text-align:center}
+header h1{margin:0;font-size:28px}
+header p{margin:5px 0 0}
+.box{background:white;margin:15px;padding:18px;border-radius:15px;box-shadow:0 2px 8px rgba(0,0,0,0.1)}
+h2{color:#009e60}
+button{background:#009e60;color:white;border:none;padding:12px 18px;border-radius:10px;font-size:16px;width:100%;margin-top:10px}
+button:active{background:#007a4a}
+select,input{width:100%;padding:12px;margin:8px 0;border:1px solid #ccc;border-radius:10px;font-size:16px}
+.result{background:#e6ffe9;padding:15px;border-radius:12px;margin-top:12px;display:none}
+.job{border-left:5px solid #009e60;padding:10px;margin:10px 0;background:#f9f9f9}
+footer{text-align:center;padding:15px;color:#777;font-size:13px}
+</style>
+</head>
+<body>
+<header>
+<h1>🇬🇦 ORIENTA GABON</h1>
+<p>Trouve ta voie après le BAC au Gabon</p>
+</header>
+
+<div class="box">
+<h2>1. Qui es-tu ?</h2>
+<input id="nom" placeholder="Ton prénom">
+<select id="classe">
+<option>Je suis en 3ème</option>
+<option>Je suis en Seconde</option>
+<option>Je suis en Première</option>
+<option>Je suis en Terminale</option>
+<option>J'ai déjà le BAC</option>
+</select>
+<select id="serie">
+<option value="A">Série A - Littéraire</option>
+<option value="B">Série B - Économique</option>
+<option value="C">Série C - Scientifique Maths</option>
+<option value="D">Série D - Scientifique Bio</option>
+<option value="F">Série F - Technique</option>
+</select>
+</div>
+
+<div class="box">
+<h2>2. Qu'est-ce que tu aimes ?</h2>
+<select id="gout">
+<option value="sante">Aider les gens, la santé</option>
+<option value="droit">Parler, défendre, le droit</option>
+<option value="info">Ordinateurs, téléphone, technologie</option>
+<option value="business">Argent, commerce, entreprise</option>
+<option value="nature">Nature, forêt, pétrole, environnement</option>
+<option value="batiment">Construire, dessiner, technique</option>
+</select>
+<button onclick="trouver()">VOIR MON ORIENTATION ➡️</button>
+<div id="res" class="result"></div>
+</div>
+
+<div class="box">
+<h2>3. Métiers qui recrutent au Gabon</h2>
+<div class="job"><b>👩🏾‍⚕️ Infirmier / Médecin</b><br>À l'Université des Sciences de la Santé (USS) - Libreville. Très demandé.</div>
+<div class="job"><b>💻 Développeur / Informaticien</b><br>À l'INSG, l'UOB ou en formation privée. Les entreprises cherchent beaucoup.</div>
+<div class="job"><b>⚖️ Juriste / Avocat</b><br>Faculté de Droit à l'UOB - Libreville. Pour travailler dans les entreprises et l'État.</div>
+<div class="job"><b>🛢️ Technicien Pétrole / Géologie</b><br>À l'USTM - Franceville / Port-Gentil. Secteur pétrole et mines.</div>
+<div class="job"><b>📊 Comptable / Gestionnaire</b><br>À l'INSG, l'IST, l'ENSET. Toutes les entreprises en ont besoin.</div>
+<div class="job"><b>🌳 Agronome / Environnement</b><br>À l'USTM, ENEF. Pour l'agriculture et la forêt du Gabon.</div>
+</div>
+
+<div class="box">
+<h2>4. Universités au Gabon</h2>
+<p>✅ <b>UOB</b> - Université Omar Bongo (Libreville)<br>
+✅ <b>USTM</b> - Université des Sciences et Techniques de Masuku (Franceville)<br>
+✅ <b>USS</b> - Université des Sciences de la Santé (Libreville)<br>
+✅ <b>INSG</b> - Institut National des Sciences de Gestion<br>
+✅ <b>ENSET</b> - École Normale Supérieure de l'Enseignement Technique</p>
+</div>
+
+<footer>Orienta Gabon - Fait avec ❤️ pour les élèves du Gabon</footer>
+
+<script>
+function trouver(){
+let g=document.getElementById('gout').value;
+let nom=document.getElementById('nom').value || "Futur bachelier";
+let r=document.getElementById('res');
+r.style.display='block';
+if(g=='sante') r.innerHTML="<b>Bravo "+nom+" !</b><br><br>🎯 Ta voie : <b>SANTÉ</b><br>Tu dois viser : Médecine, Infirmier, Pharmacie, Biologie.<br><br>École : USS à Libreville.<br>Conseil : Travaille fort la SVT et la Chimie.";
+else if(g=='droit') r.innerHTML="<b>Bravo "+nom+" !</b><br><br>🎯 Ta voie : <b>DROIT</b><br>Tu dois viser : Droit, Science Politique, Journalisme.<br><br>École : UOB Faculté de Droit.<br>Conseil : Lis beaucoup et apprends à bien parler.";
+else if(g=='info') r.innerHTML="<b>Bravo "+nom+" !</b><br><br>🎯 Ta voie : <b>INFORMATIQUE</b><br>Tu dois viser : Développement, Réseaux, Cybersécurité.<br><br>École : INSG, UOB, USTM.<br>Conseil : Apprends déjà sur ton téléphone avec YouTube.";
+else if(g=='business') r.innerHTML="<b>Bravo "+nom+" !</b><br><br>🎯 Ta voie : <b>BUSINESS</b><br>Tu dois viser : Gestion, Comptabilité, Marketing, Banque.<br><br>École : INSG, IST.<br>Conseil : Apprends à compter et à vendre.";
+else if(g=='nature') r.innerHTML="<b>Bravo "+nom+" !</b><br><br>🎯 Ta voie : <b>NATURE & PÉTROLE</b><br>Tu dois viser : Géologie, Pétrole, Agronomie, Environnement.<br><br>École : USTM à Franceville.<br>Conseil : Travaille les Maths et la SVT.";
+else r.innerHTML="<b>Bravo "+nom+" !</b><br><br>🎯 Ta voie : <b>TECHNIQUE / BÂTIMENT</b><br>Tu dois viser : Génie Civil, Électrotechnique, Architecture.<br><br>École : ENSET, USTM.<br>Conseil : Sois fort en Maths et en Dessin.";
+}
+</script>
+</body>
+</html>
